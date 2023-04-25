@@ -6,7 +6,7 @@ for (let p = 0; p < 3; p++)
 
 console.log("- ", p); // Durante: 0, 1, 2
 
-console.log("Después: ", p); // Después: undefined
+console.log("Uso LET - Después: ", p); // Después: undefined
 
 /** Opción 2: Bucle con var **/
 
@@ -16,8 +16,12 @@ for (var p = 0; p < 3; p++)
 
 console.log("- ", p); // Durante: 0, 1, 2
 
-console.log("Después: ", p); // Después: 3 
+console.log("Uso VAR - Después: ", p); // Después: 3 
 
 /**Vemos que utilizando let la variable p sólo existe dentro del bucle, ámbito local, 
 mientras que utilizando var la variable p sigue existiendo fuera del bucle, ya que 
 debe tener un ámbito global o a nivel de función. **/
+
+const NAME = "Contante: Manu";
+
+console.log(NAME);
