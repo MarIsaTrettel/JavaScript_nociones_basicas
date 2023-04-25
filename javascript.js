@@ -1,27 +1,38 @@
-/** Opción 1: Bucle con let **/
+/**Objetos básicos en JavaScript
+ * En Javascript, existe un tipo de dato llamado objeto. No es más que una variable especial que puede 
+ * contener más variables en su interior.De esta forma, tenemos la posibilidad de organizar múltiples 
+ * variables de la misma temática dentro de un objeto. **/
 
-console.log("Antes: ", p); // Antes: undefined
+const OBJETO = new Object(); // Esto es un objeto «genérico» vacío
 
-for (let p = 0; p < 3; p++)
+/**en Javascript se prefiere utilizar lo que se llaman los literales**/
 
-console.log("- ", p); // Durante: 0, 1, 2
+const objeto = {}; // Esto es un objeto vacío
 
-console.log("Uso LET - Después: ", p); // Después: undefined
+// Declaración de un objeto
 
-/** Opción 2: Bucle con var **/
+const player = {
 
-console.log("Antes: ", p); // Antes: undefined
+    name: "Manu",
+    
+    life: 99,
+    
+    strength: 10,
+    
+    }; //Estas variables dentro de los objetos se suelen denominar propiedades.
 
-for (var p = 0; p < 3; p++)
 
-console.log("- ", p); // Durante: 0, 1, 2
+//Ver la informacion dentro de los parametros:
 
-console.log("Uso VAR - Después: ", p); // Después: 3 
+    // Notación con puntos
 
-/**Vemos que utilizando let la variable p sólo existe dentro del bucle, ámbito local, 
-mientras que utilizando var la variable p sigue existiendo fuera del bucle, ya que 
-debe tener un ámbito global o a nivel de función. **/
+        console.log(player.name); // Muestra "Manu"
 
-const NAME = "Contante: Manu";
+        console.log(player.life); // Muestra 99
 
-console.log(NAME);
+    // Notación con corchetes - cuando se utilizan espacios en el nombre de la propiedad. 
+    //Es imposible hacerlo con la notación con puntos.
+
+        console.log(player["name"]); // Muestra "Manu"
+
+        console.log(player["life"]); // Muestra 99
