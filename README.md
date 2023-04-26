@@ -5,3 +5,4 @@
 3 "Constante CONST"
 4 "Objetos básicos en JavaScript"
 5 "NaN (Not A Number) y Objeto Number"
+6 "Objeto Math (Contantes y Metodos)"
