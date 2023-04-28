@@ -7,3 +7,4 @@
 5 "NaN (Not A Number) y Objeto Number"
 6 "Objeto Math (Constantes y Metodos)"
 7 "LIBRERIAS MATEMATICAS Y TRIGONOMETRICAS"
+8 "Operadores Aritméticos, de cadena, de comparación, lógicos, de tipo y de bit a bit."
