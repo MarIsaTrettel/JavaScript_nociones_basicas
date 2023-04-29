@@ -1,68 +1,102 @@
-/**Operadores Aritméticos
-+       Suma
--       Resta
-*       Multiplicación
-**      Exponenciación
-/       División
-%       Módulo: resto de dividir
-++      Incremento
---      Decremento
-=       Operador de asignación
+/**Estructuras de Control
+If          Condición simple: Si ocurre algo, haz lo siguiente...
+If/else     Condición con alternativa: Si ocurre algo, haz esto, sino, haz lo esto otro...
+?:          Operador ternario: Equivalente a If/else, método abreviado.
+Switch      Estructura para casos específicos: Similar a varios If/else anidados.
  */
 
-var txt1 = "John";
+var nota = 7;
 
-var txt2 = "Doe";
+console.log("He realizado mi examen.");
 
-var txt3 = txt1 + " " + txt2;
+if (nota >= 5) {
 
-console.log(txt3);
+console.log("¡Estoy aprobado!");
 
-//Operadores de cadena 
-var txt4 = "What a very ";
+}
 
-txt4 += "nice day";
+console.log("He realizado mi examen. Mi resultado es el siguiente:" + nota);
 
-console.log(txt4);
+if (nota < 5) {
 
-//Agregar cadenas y números
-var x = 5 + 5;
+calificacion = "suspendido";
 
-var y = "5" + 5;
+} else {
 
-var z = "Hello" + 5; //Si agrega un número y una cadena, el resultado será una cadena.
+calificacion = "aprobado";
 
-console.log(x, y, z)
+}
 
-/**Operadores de comparación
-==      equal to
-===     equal value and equal type
-!=      not equal
-!==     not equal value or not equal type
->       greater than
-<       less than
->=      greater than or equal to
-<=      less than or equal to
-?       ternary operator
- */
+console.log("Estoy", calificacion);
 
-/**Operadores lógicos
-&&      logical and
-||      logical or
-!       logical not
- */
+// Con operador ternario (condición ? verdadero : falso)
+// Es una opción que sólo se recomienda utilizar cuando son if muy pequeños.
 
-/** Operadores de tipo
-typeof      Returns the type of a variable
-instanceof  Returns true if an object is an instance of an object type
- */
+var nota = 7;
 
-/**Operadores de bit a bit
-&   AND
-|   OR
-~   NOT
-^   XOR
-<<  Zero fill left shift
->>  Signed right shift
->>> Zero fill right shift
- */
+console.log("He realizado mi examen. Mi resultado es el siguiente:");
+
+var calificacion = nota < 5 ? "suspendido":"aprobado";
+
+console.log("Estoy", calificacion);
+
+// Switch
+// Este ejemplo funcionaría si sólo permitimos notas que sean números enteros, 
+// es decir, números del 0 al 10, sin decimales.
+
+switch (nota) {
+
+    case 10:
+    
+    calificacion = "Insuficiente";
+    
+    break; //al final de cada caso es necesario indicar un break para salir del switch. 
+    //En el caso que no sea haga, el programa saltará al siguiente caso, aunque no se cumpla la condición específica.
+    
+    case 9:
+    
+    case 8:
+    
+    calificacion = "Notable";
+    
+    break;
+    
+    case 7:
+    
+    case 6:
+    
+    calificacion = "Bien";
+    
+    break;
+    
+    case 5:
+    
+    calificacion = "Suficiente";
+    
+    break;
+    
+    case 4:
+    
+    case 3:
+    
+    case 2:
+    
+    case 1:
+    
+    case 0:
+    
+    calificacion = "Insuficiente";
+    
+    break;
+    
+    default:
+    
+    // Cualquier otro caso
+    
+    calificacion = "Nota errónea";
+    
+    break;
+    
+    }
+    
+    console.log("He obtenido un", calificacion);
