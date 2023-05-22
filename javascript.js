@@ -1,102 +1,69 @@
-/**Estructuras de Control
-If          Condición simple: Si ocurre algo, haz lo siguiente...
-If/else     Condición con alternativa: Si ocurre algo, haz esto, sino, haz lo esto otro...
-?:          Operador ternario: Equivalente a If/else, método abreviado.
-Switch      Estructura para casos específicos: Similar a varios If/else anidados.
+/**FUNCIONES
+Es un "subprograma" que puede ser llamado por código externo (o interno en caso de recursión) a la función. 
  */
 
-var nota = 7;
+/* Declarando la función 'myFunc' */
 
-console.log("He realizado mi examen.");
+function myFunc(elobjeto)
 
-if (nota >= 5) {
+{
 
-console.log("¡Estoy aprobado!");
-
-}
-
-console.log("He realizado mi examen. Mi resultado es el siguiente:" + nota);
-
-if (nota < 5) {
-
-calificacion = "suspendido";
-
-} else {
-
-calificacion = "aprobado";
+elobjeto.marca= "Toyota";
 
 }
 
-console.log("Estoy", calificacion);
+/*Declarando la variable 'mycar';
+* Se crea e inicializa el nuevo objeto;
+* para hacer referencia a él mediante 'mycar'*/
 
-// Con operador ternario (condición ? verdadero : falso)
-// Es una opción que sólo se recomienda utilizar cuando son if muy pequeños.
+var mycar = {
+marca: "Honda",
+modelo: "Accord",
+año: 1998
+};
 
-var nota = 7;
+/* Mostrando 'Honda' */
+window.alert(mycar.marca);
 
-console.log("He realizado mi examen. Mi resultado es el siguiente:");
+/* Paso por referencia del objeto 'mycar' a la función 'myFunc'*/
+myFunc(mycar);
 
-var calificacion = nota < 5 ? "suspendido":"aprobado";
+/*Muestra 'Toyota' como valor de la propiedad 'marca'
+ del objeto, que ha sido cambiado por la función.*/
+window.alert(mycar.marca);
 
-console.log("Estoy", calificacion);
+//FUNCION RECURSIVA
 
-// Switch
-// Este ejemplo funcionaría si sólo permitimos notas que sean números enteros, 
-// es decir, números del 0 al 10, sin decimales.
+function loop(x) {
 
-switch (nota) {
-
-    case 10:
+    if (x >= 10) // "x >= 10" es la condición de salida (equivalente a "!(x < 10)")
     
-    calificacion = "Insuficiente";
+    return;
     
-    break; //al final de cada caso es necesario indicar un break para salir del switch. 
-    //En el caso que no sea haga, el programa saltará al siguiente caso, aunque no se cumpla la condición específica.
+    // haz algo
     
-    case 9:
-    
-    case 8:
-    
-    calificacion = "Notable";
-    
-    break;
-    
-    case 7:
-    
-    case 6:
-    
-    calificacion = "Bien";
-    
-    break;
-    
-    case 5:
-    
-    calificacion = "Suficiente";
-    
-    break;
-    
-    case 4:
-    
-    case 3:
-    
-    case 2:
-    
-    case 1:
-    
-    case 0:
-    
-    calificacion = "Insuficiente";
-    
-    break;
-    
-    default:
-    
-    // Cualquier otro caso
-    
-    calificacion = "Nota errónea";
-    
-    break;
+    loop(x + 1); // la llamada recursiva
     
     }
     
-    console.log("He obtenido un", calificacion);
+    loop(0);
+
+// FUNCION ANIDADAS Y CIERRE
+
+function addCuadrado(a,b) {
+
+    function cuadrado(x) {
+    
+    return x * x;
+    
+    }
+    
+    return cuadrado(a) + cuadrado(b);
+    
+    }
+    
+    a = addCuadrado(2,3); // retorna 13
+    
+    b = addCuadrado(3,4); // retorna 25
+    
+    c = addCuadrado(4,5); // retorna 41
